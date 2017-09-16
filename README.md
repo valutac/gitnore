@@ -1,3 +1,7 @@
+# gitnore - Super Power for gitignore
+
+![](screencast.gif)
+
 ## Installation
 
 ```
