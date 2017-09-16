@@ -1,6 +1,0 @@
-  GOOS=windows GOARCH=386 go build -o gitnore-windows.exe
-  GOOS=windows GOARCH=amd64 go build -o gitnore-windows-64.exe
-  GOOS=linux GOARCH=386 go build -o gitnore-linux-32
-  GOOS=linux GOARCH=amd64 go build -o gitnore-linux-64
-  GOOS=darwin GOARCH=386 go build -o gitnore-macos-32
-  GOOS=darwin GOARCH=amd64 go build -o gitnore-macos-64
