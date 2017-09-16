@@ -1,7 +1,7 @@
 ## Installation
 
 ```
-brew install gitnore
+go install github.com/valutac/gitnore
 ```
 
 ## Usage
@@ -37,16 +37,16 @@ Output
 
 ```
 List avaiables gitignore:
-actionscript, ada, agda, android, appceleratortitanium, appengine, archlinuxpackages, autotools, c, c++, 
-cakephp, cfwheels, chefcookbook, clojure, cmake, codeigniter, commonlisp, composer, concrete5, coq, 
-craftcms, cuda, d, dart, delphi, dm, drupal, eagle, elisp, elixir, elm, episerver, erlang, 
-expressionengine, extjs, fancy, finale, forcedotcom, fortran, fuelphp, gcov, gitbook, go, gradle, grails, 
-gwt, haskell, idris, igorpro, java, jboss, jekyll, joomla, julia, kicad, kohana, kotlin, labview, laravel, 
-leiningen, lemonstand, lilypond, lithium, lua, magento, maven, mercury, metaprogrammingsystem, nanoc, nim, 
-node, objective-c, ocaml, opa, opencart, oracleforms, packer, perl, phalcon, playframework, plone, 
-prestashop, processing, purescript, python, qooxdoo, qt, r, rails, rhodesrhomobile, ros, ruby, rust, sass, 
-scala, scheme, scons, scrivener, sdcc, seamgen, sketchup, smalltalk, stella, sugarcrm, swift, symfony, 
-symphonycms, terraform, tex, textpattern, turbogears2, typo3, umbraco, unity, unrealengine, visualstudio, 
+actionscript, ada, agda, android, appceleratortitanium, appengine, archlinuxpackages, autotools, c, c++,
+cakephp, cfwheels, chefcookbook, clojure, cmake, codeigniter, commonlisp, composer, concrete5, coq,
+craftcms, cuda, d, dart, delphi, dm, drupal, eagle, elisp, elixir, elm, episerver, erlang,
+expressionengine, extjs, fancy, finale, forcedotcom, fortran, fuelphp, gcov, gitbook, go, gradle, grails,
+gwt, haskell, idris, igorpro, java, jboss, jekyll, joomla, julia, kicad, kohana, kotlin, labview, laravel,
+leiningen, lemonstand, lilypond, lithium, lua, magento, maven, mercury, metaprogrammingsystem, nanoc, nim,
+node, objective-c, ocaml, opa, opencart, oracleforms, packer, perl, phalcon, playframework, plone,
+prestashop, processing, purescript, python, qooxdoo, qt, r, rails, rhodesrhomobile, ros, ruby, rust, sass,
+scala, scheme, scons, scrivener, sdcc, seamgen, sketchup, smalltalk, stella, sugarcrm, swift, symfony,
+symphonycms, terraform, tex, textpattern, turbogears2, typo3, umbraco, unity, unrealengine, visualstudio,
 vvvv, waf, wordpress, xojo, yeoman, yii, zendframework, zephir
 ```
 
