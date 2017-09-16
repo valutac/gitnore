@@ -1,8 +1,11 @@
 ## Installation
 
 ```
-go install github.com/valutac/gitnore
+go get github.com/valutac/gitnore
 ```
+or
+
+[Download](https://github.com/valutac/gitnore/releases/tag/0.2.0) binary file.
 
 ## Usage
 
