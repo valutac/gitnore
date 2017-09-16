@@ -80,6 +80,17 @@ func main() {
 
 func usage() {
 	fmt.Println("Usage: ./gitnore -i language -o .gitignore")
-	flag.PrintDefaults()
+	fmt.Println()
+	fmt.Println("Available commands:")
+	fmt.Println("\tupdate \t: Update gitignore dictionary")
+	fmt.Println("\tlist \t: List available gitignore")
+	fmt.Println()
+	fmt.Println("Parameters:")
+	fmt.Println("\t-i \t: Select Language (-i python)")
+	fmt.Println("\t-o \t: Output filename (default .gitignore)")
+	fmt.Println()
+	fmt.Println("Example usage:")
+	fmt.Println("\t$ gitnore -i python \t\t: default set to .gitignore")
+	fmt.Println("\t$ gitnore -i go -u .gitmodule \t: set output file to .gitmodule")
 	os.Exit(1)
 }
