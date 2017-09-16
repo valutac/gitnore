@@ -1,0 +1,14 @@
+hash: 738b1ac420dfcba07b10e887930ffb62a1de1e87b89458ef869f29893f0c1ffb
+updated: 2017-09-16T15:28:53.266488286+07:00
+imports:
+- name: github.com/cavaliercoder/grab
+  version: e2cf8055a943781c5f6424590b0495cd59f616f0
+- name: github.com/google/go-github
+  version: 12126fbfe000a09047ebdeb2b5160be3af88ab9e
+  subpackages:
+  - github
+- name: github.com/google/go-querystring
+  version: 53e6ce116135b80d037921a7fdd5138cf32d7a8a
+  subpackages:
+  - query
+testImports: []

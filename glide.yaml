@@ -1,0 +1,5 @@
+package: github.com/Valutac/gitnore
+import:
+- package: github.com/google/go-github
+- package: github.com/cavaliercoder/grab
+  version: ^2.0.0
