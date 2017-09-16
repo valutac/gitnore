@@ -5,9 +5,13 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	osuser "os/user"
 )
 
-var src, dest *string
+var (
+	src, dest *string
+	user      *osuser.User
+)
 
 var mapping map[string]string
 
@@ -25,18 +29,27 @@ func main() {
 		os.Exit(1)
 	}
 
+	var err error
+	user, err = osuser.Current()
+	if err != nil {
+		fmt.Printf("Error when checking current user: %s\n", err.Error())
+		os.Exit(1)
+	}
+
+	// setup source dir
+	source_dir = fmt.Sprintf("%s/.gitnore", user.HomeDir)
+
 	cmd := os.Args[1]
 
 	if cmd == "update" {
 		updateMap()
 	}
 
+	mapping = listMap()
 	if cmd == "list" {
-		listMap(true)
+		printMap(mapping)
 		os.Exit(0)
 	}
-
-	mapping = listMap(false)
 
 	if *src == "" || *dest == "" {
 		fmt.Println("src / dest is required")
@@ -45,7 +58,6 @@ func main() {
 
 	var (
 		b    []byte
-		err  error
 		ok   bool
 		path string
 	)
