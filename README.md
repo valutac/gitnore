@@ -61,6 +61,10 @@ vvvv, waf, wordpress, xojo, yeoman, yii, zendframework, zephir
 
 Pull Request is open!
 
+### .gitignore dictionary
+
+Add .gitignore file to this [repo](https://github.com/valutac/gitignore)
+
 ## LICENSE
 
 [MIT LICENSE](LICENSE)
