@@ -7,12 +7,11 @@ import (
 	"os"
 )
 
-var cmd, src, dest *string
+var src, dest *string
 
 var mapping map[string]string
 
 func init() {
-	cmd = flag.String("cmd", "copy", "Command to execute")
 	src = flag.String("i", "", "Source File")
 	dest = flag.String("o", ".gitignore", "Destination File")
 }
@@ -21,11 +20,18 @@ func main() {
 	flag.Parse()
 	flag.Usage = usage
 
-	if *cmd == "update" {
+	if len(os.Args) == 1 {
+		usage()
+		os.Exit(1)
+	}
+
+	cmd := os.Args[1]
+
+	if cmd == "update" {
 		updateMap()
 	}
 
-	if *cmd == "list" {
+	if cmd == "list" {
 		listMap(true)
 		os.Exit(0)
 	}
@@ -61,6 +67,7 @@ func main() {
 }
 
 func usage() {
-	fmt.Println("./file -i input -o output")
+	fmt.Println("Usage: ./gitnore -i language -o .gitignore")
+	flag.PrintDefaults()
 	os.Exit(1)
 }

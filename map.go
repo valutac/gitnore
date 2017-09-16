@@ -5,13 +5,17 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"sort"
 	"strings"
 )
 
-const MAP_FILE_PATH = "./config/map.json"
+const (
+	MAP_FILE_PATH = "./config/map.json"
+	SOURCE_DIR    = "./config"
+)
 
 func updateMap() {
-	files, err := ioutil.ReadDir("./config")
+	files, err := ioutil.ReadDir(SOURCE_DIR)
 	if err != nil {
 		fmt.Printf("Error when updating map file: %s\n", err.Error())
 		os.Exit(1)
@@ -23,7 +27,7 @@ func updateMap() {
 			continue
 		}
 		key := strings.ToLower(split[0])
-		data[key] = fmt.Sprintf("config/%s", file.Name())
+		data[key] = fmt.Sprintf("%s/%s", SOURCE_DIR, file.Name())
 	}
 	b, err := json.Marshal(data)
 	if err != nil {
@@ -50,8 +54,18 @@ func listMap(print bool) map[string]string {
 		os.Exit(1)
 	}
 	if print {
+		fmt.Println("List avaiables gitignore:")
+		var keys []string
 		for key := range data {
-			fmt.Printf("%s ", key)
+			keys = append(keys, key)
+		}
+		sort.Strings(keys)
+		for i, key := range keys {
+			if i+1 == len(keys) {
+				fmt.Println(key)
+				continue
+			}
+			fmt.Printf("%s, ", key)
 		}
 	}
 	return data
