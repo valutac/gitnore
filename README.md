@@ -63,7 +63,7 @@ Pull Request is open!
 
 ### .gitignore dictionary
 
-Add .gitignore file to this [repo](https://github.com/valutac/gitignore)
+Add .gitignore file to this [repo](https://github.com/valutac/gitnore/tree/master/config)
 
 ## LICENSE
 
