@@ -7,15 +7,12 @@ import (
 	"os"
 )
 
-var src, dest *string
+var cmd, src, dest *string
 
-var mapping = map[string]string{
-	"python": "config/python.gitignore",
-	"go":     "config/golang.gitignore",
-	"c":      "config/c.gitignore",
-}
+var mapping map[string]string
 
 func init() {
+	cmd = flag.String("cmd", "copy", "Command to execute")
 	src = flag.String("i", "", "Source File")
 	dest = flag.String("o", ".gitignore", "Destination File")
 }
@@ -23,6 +20,17 @@ func init() {
 func main() {
 	flag.Parse()
 	flag.Usage = usage
+
+	if *cmd == "update" {
+		updateMap()
+	}
+
+	if *cmd == "list" {
+		listMap(true)
+		os.Exit(0)
+	}
+
+	mapping = listMap(false)
 
 	if *src == "" || *dest == "" {
 		fmt.Println("src / dest is required")
