@@ -37,7 +37,7 @@ func main() {
 	}
 
 	// setup source dir
-	source_dir = fmt.Sprintf("%s/.gitnore", user.HomeDir)
+	sourceDir = fmt.Sprintf("%s/.gitnore", user.HomeDir)
 
 	cmd := os.Args[1]
 
