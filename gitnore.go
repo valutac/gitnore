@@ -91,6 +91,6 @@ func usage() {
 	fmt.Println()
 	fmt.Println("Example usage:")
 	fmt.Println("\t$ gitnore -i python \t\t: default set to .gitignore")
-	fmt.Println("\t$ gitnore -i go -u .gitmodule \t: set output file to .gitmodule")
+	fmt.Println("\t$ gitnore -i go -o .gitmodule \t: set output file to .gitmodule")
 	os.Exit(1)
 }

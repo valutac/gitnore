@@ -86,7 +86,7 @@ func updateMap() {
 		fmt.Printf("Error when updating map file: %s\n", err.Error())
 		os.Exit(1)
 	}
-	fmt.Println("Updating map file succed")
+	fmt.Println("Updating map file succeeded")
 	os.Exit(0)
 }
 
@@ -112,7 +112,7 @@ func listMap() map[string]string {
 }
 
 func printMap(data map[string]string) {
-	fmt.Println("List avaiables gitignore:")
+	fmt.Println("Available gitignore configurations:")
 	var keys []string
 	for key := range data {
 		keys = append(keys, key)
