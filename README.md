@@ -28,6 +28,12 @@ list                 List available gitignore
 $ gitnore -i go   # gitignore for golang
 ```
 
+### With multiple languages
+
+```
+$ gitnore -i java,node,r   # comma separated list of languages
+```
+
 ### Update Map File
 
 ```
