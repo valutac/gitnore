@@ -14,31 +14,31 @@ import (
 	"github.com/google/go-github/github"
 )
 
-var source_dir string
+var sourceDir string
 
 func updateMap() {
-	var raw_dir = fmt.Sprintf("%s/raw", source_dir)
-	if _, err := os.Stat(source_dir); err != nil && os.IsNotExist(err) {
-		if err = os.Mkdir(source_dir, 0700); err != nil {
+	var rawDir = fmt.Sprintf("%s/raw", sourceDir)
+	if _, err := os.Stat(sourceDir); err != nil && os.IsNotExist(err) {
+		if err = os.Mkdir(sourceDir, 0700); err != nil {
 			fmt.Printf("Error when updating map file: %s\n", err.Error())
 			os.Exit(1)
 		}
-		if err = os.Mkdir(raw_dir, 0700); err != nil {
+		if err = os.Mkdir(rawDir, 0700); err != nil {
 			fmt.Printf("Error when updating map file: %s\n", err.Error())
 			os.Exit(1)
 		}
 	}
 	ctx := context.Background()
 	client := github.NewClient(nil)
-	_, dir_contents, _, err := client.Repositories.GetContents(ctx, "valutac", "gitnore", "/config", nil)
+	_, dirContents, _, err := client.Repositories.GetContents(ctx, "valutac", "gitnore", "/config", nil)
 	if err != nil {
 		fmt.Printf("Error when updating map file: %s\n", err.Error())
 		os.Exit(1)
 	}
 
 	dl := grab.NewClient()
-	for _, content := range dir_contents {
-		req, _ := grab.NewRequest(raw_dir, content.GetDownloadURL())
+	for _, content := range dirContents {
+		req, _ := grab.NewRequest(rawDir, content.GetDownloadURL())
 		resp := dl.Do(req)
 		t := time.NewTicker(500 * time.Millisecond)
 		defer t.Stop()
@@ -62,7 +62,7 @@ func updateMap() {
 		fmt.Printf("Download saved to %s \n", resp.Filename)
 	}
 
-	files, err := ioutil.ReadDir(raw_dir)
+	files, err := ioutil.ReadDir(rawDir)
 	if err != nil {
 		fmt.Printf("Error when updating map file: %s\n", err.Error())
 		os.Exit(1)
@@ -74,28 +74,28 @@ func updateMap() {
 			continue
 		}
 		key := strings.ToLower(split[0])
-		data[key] = fmt.Sprintf("%s/%s", raw_dir, file.Name())
+		data[key] = fmt.Sprintf("%s/%s", rawDir, file.Name())
 	}
 	b, err := json.Marshal(data)
 	if err != nil {
 		fmt.Printf("Error when updating map file: %s\n", err.Error())
 		os.Exit(1)
 	}
-	var map_file_path = fmt.Sprintf("%s/map.json", source_dir)
-	if err := ioutil.WriteFile(map_file_path, b, 0644); err != nil {
+	var mapFilePath = fmt.Sprintf("%s/map.json", sourceDir)
+	if err := ioutil.WriteFile(mapFilePath, b, 0644); err != nil {
 		fmt.Printf("Error when updating map file: %s\n", err.Error())
 		os.Exit(1)
 	}
-	fmt.Println("Updating map file succed")
+	fmt.Println("Updating map file succeeded")
 	os.Exit(0)
 }
 
 func listMap() map[string]string {
 	var (
-		data          map[string]string
-		map_file_path = fmt.Sprintf("%s/map.json", source_dir)
+		data        map[string]string
+		mapFilePath = fmt.Sprintf("%s/map.json", sourceDir)
 	)
-	f, err := os.Open(map_file_path)
+	f, err := os.Open(mapFilePath)
 	if err != nil {
 		if os.IsNotExist(err) {
 			fmt.Println("Map file not available, please run gitnore update")
@@ -112,7 +112,7 @@ func listMap() map[string]string {
 }
 
 func printMap(data map[string]string) {
-	fmt.Println("List avaiables gitignore:")
+	fmt.Println("Available gitignore configurations:")
 	var keys []string
 	for key := range data {
 		keys = append(keys, key)

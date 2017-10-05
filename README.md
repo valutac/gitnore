@@ -16,7 +16,7 @@ or
 Available commands:
 
 ```
-update | Update      Update all gitignore configuration
+update | Update      Update all gitignore configurations
 list                 List available gitignore
 -i | input           Gitignore input
 -o | output          Gitignore output filename
@@ -26,6 +26,12 @@ list                 List available gitignore
 
 ```
 $ gitnore -i go   # gitignore for golang
+```
+
+### With multiple languages
+
+```
+$ gitnore -i java,node,r   # comma separated list of languages
 ```
 
 ### Update Map File
@@ -43,7 +49,7 @@ $ gitnore list
 Output
 
 ```
-List avaiables gitignore:
+Available gitignore configurations:
 actionscript, ada, agda, android, appceleratortitanium, appengine, archlinuxpackages, autotools, c, c++,
 cakephp, cfwheels, chefcookbook, clojure, cmake, codeigniter, commonlisp, composer, concrete5, coq,
 craftcms, cuda, d, dart, delphi, dm, drupal, eagle, elisp, elixir, elm, episerver, erlang,
