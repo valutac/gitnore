@@ -9,7 +9,7 @@ go get github.com/valutac/gitnore
 ```
 or
 
-[Download](https://github.com/valutac/gitnore/releases/tag/0.3.0) binary file.
+[Download](https://github.com/valutac/gitnore/releases/tag/0.4.0) binary file.
 
 ## Usage
 
@@ -73,6 +73,8 @@ Add .gitignore file to this [repo](https://github.com/valutac/gitnore/tree/maste
 
 ## LICENSE
 
-[MIT LICENSE](LICENSE)
+<a href="LICENSE">
+<img src="https://raw.githubusercontent.com/valutac/accent/master/mit.png" width="75"></img>
+</a>
 
 
