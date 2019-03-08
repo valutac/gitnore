@@ -1,5 +1,7 @@
 # gitnore - Super Power for gitignore
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/valutac/gitnore)](https://goreportcard.com/report/github.com/valutac/gitnore)
+
 ![](screencast.gif)
 
 ## Installation
